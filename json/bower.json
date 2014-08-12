@@ -1,0 +1,19 @@
+{
+  "name": "systemjs-json",
+  "version": "0.0.1",
+  "homepage": "https://github.com/matthewp/systemjs-json",
+  "authors": [
+    "Matthew Phillips <matthew@matthewphillips.info>"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "system.js": "systemjs/systemjs#0.6.6"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

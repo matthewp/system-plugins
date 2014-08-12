@@ -1,0 +1,15 @@
+<html>
+<head>
+  <title>JSON System.js</title>
+</head>
+<body>
+  <script src="bower_components/es6-module-loader/dist/es6-module-loader.js"></script>
+  <script src="bower_components/system.js/dist/system.js"></script>
+
+  <script>
+    System.import('bower.json!json').then(function(bower) {
+      console.log('Got bower.json', bower);
+    });
+  </script>
+</body>
+</html>
