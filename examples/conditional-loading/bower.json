@@ -1,0 +1,20 @@
+{
+  "name": "conditional-loading",
+  "version": "0.0.0",
+  "homepage": "https://github.com/matthewp/system-plugins",
+  "authors": [
+    "Matthew Phillips <matthew@matthewphillips.info>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "steal": "~0.3.0",
+    "requestAnimationFrame": "~0.0.20"
+  }
+}

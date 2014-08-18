@@ -1,0 +1,1 @@
+var tripleSlashExp = /img src="\/\/\/(.+)"/;

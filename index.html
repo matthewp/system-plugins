@@ -59,10 +59,10 @@
         <section>
           <h3>With SystemJS you can...</h3>
           <ol>
-            <li>Load just about anything that can be converted into JavaScript.</li>
-            <li>Invent new syntax rules for loading.</li>
-            <li>Preload images so they are freshly cached.</li>
-            <li>Create special types of behaviors in your module loader.</li>
+            <li class="fragment">Load just about anything that can be converted into JavaScript.</li>
+            <li class="fragment">Invent new syntax rules for loading.</li>
+            <li class="fragment">Preload images so they are freshly cached.</li>
+            <li class="fragment">Create special types of behaviors in your module loader.</li>
           </ol>
         </section>
         <section>
@@ -94,13 +94,13 @@
               <li><em>Currently</em> are simply just wrapper functions.</li>
             </ul>
             <pre><code data-trim class="javascript">
-var oldNormalize = System.normalize;
+var systemNormalize = System.normalize;
 System.normalize = function(name, parentName, parentAddress) {
-  // We want to use jQuery that's already loaded, so ignore the dependency.
-  if(name.indexOf('jquery') === 0) {
-    return "@empty";
+  if(name.indexOf('.') === -1) {
+    name = name + '.coffee!';
+    return systemNormalize.call(this, parentName, parentAddress);
   }
-  return oldNormalize.apply(this, arguments);
+  return systemNormalize.apply(this, arguments);
 };
             </code></pre>
           </section>
@@ -112,7 +112,7 @@ System.normalize = function(name, parentName, parentAddress) {
           <section>
             <h3>Normalize</h3>
             <ul>
-              <li class="fragment">Converts a module name to the fully normalized module name</li>
+              <li class="fragment">Converts a module name to the fully normalized module name.</li>
               <li class="fragment"><code>can/map</code> becomes <code>can/map/map</code></li>
               <li class="fragment"><code>./utils</code> becomes <code>app/utils</code> when 
             in the <code>app</code> folder.</li>
@@ -129,13 +129,15 @@ System.normalize = function(name, parentName, parentAddress) {
           <section>
             <h3>Fetch</h3>
             <ul>
-              <li>Has full control over fetching the module.</li>
+              <li class="fragment">Gives you full control over fetching the module.</li>
+              <li class="fragment">If you want to load the module in some other method than XHR.</li>
             </ul>
           </section>
           <section>
             <h3>Translate</h3>
             <ul>
               <li class="fragment">Convert the source of a load to some other representation.</li>
+              <li class="fragment">For example, transpiling to JavaScript.</li>
               <li class="fragment">Returning undefined will continue through the loading process as if
               <code>load.source</code> has been modified.</li>
               <li class="fragment">Returning a source will exit the loading process.</li>
@@ -144,7 +146,9 @@ System.normalize = function(name, parentName, parentAddress) {
           <section>
             <h3>Instantiate</h3>
             <ul>
-              <li>Any return value becomes the module value.</li>
+              <li class="fragment">Last chance to override the default instantiate behavior.</li>
+              <li class="fragment">Can override <code>execute</code> at this point.</li>
+              <li class="fragment">Set the module's format.</li>
             </ul>
           </section>
           <section>
