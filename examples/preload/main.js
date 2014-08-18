@@ -1,6 +1,5 @@
 var can = require('can/can');
 require('can/view/stache/stache');
-require('images/canjs_logo_blue.png!preload');
 
 var renderer = can.view('template');
 var frag = renderer({
@@ -9,3 +8,5 @@ var frag = renderer({
   }
 });
 can.$('#main').html(frag);
+
+System.import('images/canjs_logo_blue.png!preload');
