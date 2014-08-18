@@ -52,12 +52,15 @@
           <p>
           <small>By <a href="http://www.matthewphillips.info">Matthew Phillips</a> of <a href="http://bitovi.com">Bitovi</a></small>
           </p>
+          <p>
+            <small><a href="examples.html">Examples</a></small>
+          </p>
         </section>
         <section>
           <h3>With SystemJS you can...</h3>
           <ol>
             <li>Load just about anything that can be converted into JavaScript.</li>
-            <li>Load modules from alternative locations.</li>
+            <li>Invent new syntax rules for loading.</li>
             <li>Preload images so they are freshly cached.</li>
             <li>Create special types of behaviors in your module loader.</li>
           </ol>
@@ -85,10 +88,10 @@
           <section>
             <h3>Extensions</h3>
             <ul>
-              <li>Extend the global System loader.</li>
-              <li>Apply to every module that runs through the loading process.</li>
+              <li>Extend the functionality of a Loader.</li>
+              <li>Gets applied to every module that runs through the loading process.</li>
               <li>Have access to all hooks plugins have plus <strong>normalize</strong>.</li>
-              <li>Are simply just wrapper functions.</li>
+              <li><em>Currently</em> are simply just wrapper functions.</li>
             </ul>
             <pre><code data-trim class="javascript">
 var oldNormalize = System.normalize;
@@ -118,7 +121,9 @@ System.normalize = function(name, parentName, parentAddress) {
           <section>
             <h3>Locate</h3>
             <ul>
-              <li>Overrides the location of the module.</li>
+              <li class="fragment">Overrides the location of the module.</li>
+              <li class="fragment">Load from a different protocol (enforce https?).</li>
+              <li class="fragment">Attach query parameters to the request.</li>
             </ul>
           </section>
           <section>

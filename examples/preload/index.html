@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <title>Image Preloader!</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+
+  <style>
+    .canjs {
+      width: 600px;
+    }
+  </style>
+</head>
+<body>
+  <script id="template" type="text/stache">
+    <div class="container">
+      <div class="row">
+          <h1>What is the best MVC Framework?</h1>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <button id="select" can-click="showAnswer">Click here to find out</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12" id="best-framework"></div>
+      </div>
+    </div>
+  </script>
+  <script id="template2" type="text/stache">
+    <img src="images/canjs_logo_blue.png" class="canjs" />
+  </script>
+
+  <div id="main"></div>
+  <script src="bower_components/steal/steal.js"
+          data-config="config.js" data-main="main"></script>
+</body>
+</html>
