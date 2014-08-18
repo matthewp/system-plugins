@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+  <title>SystemJS -> Steal</title>
+</head>
+<body>
+  <div id="main"></div>
+  <script src="bower_components/es6-module-loader/dist/es6-module-loader.js"></script>
+  <script src="bower_components/system.js/dist/system.js"></script>
+
+  <script>
+    System.import('steal-format').then(function() {
+      return System.import('main');
+      }, function(err) { setTimeout(function() { throw err; }); });
+  </script>
+</body>
+</html>
