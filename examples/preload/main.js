@@ -8,3 +8,5 @@ var frag = renderer({
   }
 });
 can.$('#main').html(frag);
+
+System.import('images/canjs_logo_blue.png!preload');

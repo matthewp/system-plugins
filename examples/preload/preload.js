@@ -1,4 +1,3 @@
-
 exports.fetch = function(load) {
   var address = load.address;
   var img = load.metadata.img = new Image();
