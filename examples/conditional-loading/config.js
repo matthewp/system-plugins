@@ -1,5 +1,3 @@
-System.trace = true;
-
 System.paths['raf'] = 'bower_components/requestAnimationFrame/app/requestAnimationFrame.js';
 
 System.meta['raf'] = {
